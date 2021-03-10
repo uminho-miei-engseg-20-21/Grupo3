@@ -28,7 +28,7 @@
 #### Pergunta P4.1
 > A Entidade de Certificação EquiSign utiliza o algoritmo RSA (com tamanho de chave de 2048 bits) e o algoritmo SHA-256 para integridade das mensagens.
 > 
-> Enquanto que os algoritmos utilizados não são atualmente considerados inseguros, para garantir a máxima segurança, recomendamos a sua atualização, atualizando o tamanho de chave para 4096 bits, bem como substituindo o algoritmo SHA-256 pelo algoritmo SHA-3, para a integridade das mensagens.
+> Enquanto que os algoritmos utilizados não são atualmente considerados inseguros, para garantir a máxima segurança no futuro, recomendamos a sua atualização, atualizando o tamanho de chave para, pelo menos, 3072 bits, bem como substituindo o algoritmo SHA-256 pelo algoritmo SHA-512 ou SHA3-512, para a integridade das mensagens, de acordo com as recomendações emitidas pela NIST e pela ENISA presentes nos slides das aulas.
 >
 > A saída do comando `openssl x509 -in Equisign.crt -text -noout` é a seguinte:
 > 

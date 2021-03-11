@@ -28,7 +28,10 @@ Que conclusões pode tirar? Em que se baseia para essas conclusões ?
 >
 > - Desde 2020, Linux kernel version 5.6 e superior, o /dev/random só bloqueia quando (ou enquanto) o CPRNG (_cryptographic pseudorandom number generator_) não foi inicializado. Após ter sido inicializado, o [/dev/random e /dev/urandom têm o mesmo comportamento](https://www.phoronix.com/scan.php?page=news_item&px=Linux-5.6-Random-Rework).
 > - Discussão sobre a remoção do bloqueio ao /dev/random pode ser lida [aqui](https://lwn.net/Articles/808575/).
-> - Para quem quiser testar o funcionamento pré-kernel 5.6, pode utilizar [esta máquina virtual](https://meocloud.pt/link/f188f15b-7145-4e11-b59e-6a64f61084a6/CSI.EngSeg.ova/).
+> - Para quem quiser testar o funcionamento pré-kernel 5.6, pode utilizar [esta máquina virtual](https://meocloud.pt/link/f188f15b-7145-4e11-b59e-6a64f61084a6/CSI.EngSeg.ova/), que tem definido os seguintes utilizador / password: 
+>   + user / user
+>   + root / root
+>
 
 #### Pergunta P1.2
 
@@ -59,7 +62,7 @@ e escolha a versão 9/Oracle.
 
 #### Experiência 1.3
 
-Na diretoria das aulas (Aula2/PseudoAleatorio) encontra o ficheiro *generateSecret-app.py* baseado no módulo eVotUM.Cripto (https://gitlab.com/eVotUM/Cripto-py) - siga as instruções de instalação na [branch develop](https://gitlab.com/eVotUM/Cripto-py/-/tree/develop) que já é _compliant_ com o Python 3 -.
+Na diretoria das aulas (Aula2/PseudoAleatorio) encontra o ficheiro *generateSecret-app.py* baseado no módulo eVotUM.Cripto (https://gitlab.com/eVotUM/Cripto-py) - siga as instruções de instalação na [branch develop](https://gitlab.com/eVotUM/Cripto-py/-/tree/develop) que já é _compliant_ com o Python 3 -. Para instalar o módulo eVotUM.Cripto poderá efetuar o comando `git clone -b develop git@gitlab.com:eVotUM/Cripto-py.git`.
 
 1. Analise e execute esse programa de geração de segredo aleatório e indique o motivo do output apenas conter letras e dígitos (não contendo por exemplo caracteres de pontuação ou outros).
 2. O que teria de fazer para não limitar o output a letras e dígitos?
@@ -152,3 +155,5 @@ Nota 2: Para obter o tamanho das chaves e algoritmos utilizados, deverá:
 6. executar o seguinte comando ``openssl x509 -in cert.crt -text -noout`` (substitua cert.crt pelo nome que deu ao ficheiro no passo 3.)
 
 Nota 3: Na sua resposta inclua o resultado do comando ``openssl x509 -in cert.crt -text -noout``, referido na nota anterior.
+
+

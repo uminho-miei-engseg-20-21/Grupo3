@@ -89,6 +89,4 @@ def proof_of_work(last_proof):
 
 Este algoritmo apenas incrementa a variável _incrementor_ desde o valor de _last_proof_ (recebido como parâmetro) até que o mesmo seja divisível por 9 e pelo proof number do bloco anterior. 
 
-2. 
-
-Este algoritmo não deve ser utilizado para minerar os blocos uma vez que depende da prova anterior para realizar os cálculos da prova atual. Além disto, não permite controlar o nível de dificuldade aplicada e os cálculos que incorpora exigem pouco poder computacional para criar o novo bloco.
+2. Este algoritmo não deve ser utilizado para minerar os blocos uma vez que depende da prova anterior para realizar os cálculos da prova atual. Além disto, não permite controlar o nível de dificuldade da mineração e os cálculos que incorpora exigem pouco poder computacional para criar o novo bloco.

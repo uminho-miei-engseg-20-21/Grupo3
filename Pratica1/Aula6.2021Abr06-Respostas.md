@@ -42,15 +42,31 @@ Tempo obtido quando a dificuldade é 2:
 
 Tempo obtido quando a dificuldade é 3:
 
+> real    0m0.871s
+
+> user    0m0.906s
+
+> sys     0m0.045s
 
 
 Tempo obtido quando a dificuldade é 4:
+> real    0m2.572s
 
+> user    0m2.638s
+
+> sys     0m0.184s
 
 Tempo obtido quando a dificuldade é 5:
 
+> real    0m24.622s
+> user    0m25.721s
+> sys     0m1.086s
 
 
-A partir dos tempos obtidos, facilmente se verifica que a medida que o grau de dificuldade aumente, o tempo gasto para minerar o clockchain aumenta de forma bastante significativa.  
+A partir dos tempos obtidos, facilmente se verifica que a medida que o grau de dificuldade aumenta, o tempo gasto para minerar os blocos aumenta significativamente.  
 
-Isto acontece devido ao aumento do grau de dificuldade referente a resolução do puzzle associado a _proof of work_ de modo a permitir encontrar o mineiro responsavel a publicar o bloco.
+Isto acontece, devido a relação entre o grau de dificuldade e a dificuldade da resolução do puzzle da _proof of work_ que permite assegurar que o user gasta um determinado puder computacional (relacionado com o nível de dificuldade selecionado) para criar o novo bloco. 
+
+Esta estratégia encontra-se implementada assegurando que quanto maior for o grau de dificuldade, maior é o número de zeros acrescentado na parte inicial do hash. E por consequência, quanto maior o número de zeros, mais elevado é o tempo e o esforço computacional gastos para gerar o bloco. 
+
+## Pergunta P2.2

@@ -35,7 +35,9 @@ Utilizou-se o comando _time_ para obter os resultados listados em seguida.
 Tempo obtido quando a dificuldade é 2:
 
 >real    0m0.493s
+
 >user    0m0.445s
+
 >sys     0m0.032s
 
 Tempo obtido quando a dificuldade é 3:

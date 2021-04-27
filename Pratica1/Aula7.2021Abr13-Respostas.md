@@ -71,9 +71,11 @@ automóveis.
 
 ## Pergunta P1.2.2
 
-(???)
+Não é possível fazer uma estimativa quanto ao número de vulnerabilidades existentes, no entanto é provável que existam algumas dado o grande número de bugs.
 
 ## Pergunta P1.3
+
+
 
 ## Pergunta P1.4
 Uma vulnerabilidade de dia-zero, ao contrário de uma vulnerabilidade normal, é uma vulnerabilidade que não é conhecida pelo público em geral (incluindo o vendedor do software vulnerável). Até esta vulnerabilidade ser detectada e mitigada, atacantes podem explorá-la realizando ataques designados por

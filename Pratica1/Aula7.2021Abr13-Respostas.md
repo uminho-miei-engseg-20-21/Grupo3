@@ -75,7 +75,17 @@ Não é possível fazer uma estimativa quanto ao número de vulnerabilidades exi
 
 ## Pergunta P1.3
 
+### Vulnerabilidades de Projeto
+ - A vulnerabilidade CVE-2009-3168 permitia que um atacante remoto desse "reset" às passwords de administradores e além disso permitia também a criação de utilizadores com permissão de administrador. A vulnerabilidade é de fácil correção, é necessário assegurar que apenas utilizadores autorizados possam realizar estas operações. Este problema poderia ter sido evitado se na fase de planeamento da aplicação fossem utilizadas bibliotecas e frameworks que prevenissem este tipo de vulnerabilidades.
+ - A vulnerabilidade CVE-2007-6602 permitia atacantes remotos executar código SQL arbitrário no campo "username" do script de login. A vulnerabilidade é também de fácil correção, basta garantir que naquele campo não seja possível introduzir código SQL. No entanto isto poderia ter sido evitado se fossem utilizadas bibliotecas e frameworks que prevenissem este tipo de vulnerabilidades.
 
+### Vulnerabilidades de Codificação
+ - A vulnerabilidade CVE-2014-1266 permitia ataques do tipo "man-in-the-middle" onde atacantes conseguiam fazer-se passar por servidores SSL válidos. Ocorreu devido a uma má validação de certificados na implementação do software. A vulnerabilidade é de relativamente fácil correção, é necessário garantir que os certificados são válidos e pertencem a uma entidade confiável.
+ - A vulnerabilidade CVE-2010-0467 permitia que atacantes remotos conseguissem ler ficheiros arbitários escrevendo .. (ponto ponto) num parâmetro do programa. Esta vulnerabilidade é também de fácil correção, sendo necessário garantir que os inputs dados nestes parâmetros são aceitáveis.
+
+### Vulnerabilidades Operacionais
+ - Na vulnerabilidade CVE-2018-1999036 é possível utilizadores com permissão de leitura consigam ler chaves SSH privadas num ficheiro de "logs". A vulnerabilidade é de fácil correção se for possível não escrever estes "logs", caso contrário poderá ser um pouco mais complicado mas irá depender da aplicação em si e da necessidade de escrever "logs" com esta informação.
+ - A vulnerabilidade CVE-2017-9615 permite a atacantes ter acesso a credenciais de administrador devido a um registo detalhado de "logs" onde é escrita a password do mesmo. A vulnerabilidade é de fácil correção se o programa permitir alterar o detalhe dos logs ou removê-los completamente.
 
 ## Pergunta P1.4
 Uma vulnerabilidade de dia-zero, ao contrário de uma vulnerabilidade normal, é uma vulnerabilidade que não é conhecida pelo público em geral (incluindo o vendedor do software vulnerável). Até esta vulnerabilidade ser detectada e mitigada, atacantes podem explorá-la realizando ataques designados por

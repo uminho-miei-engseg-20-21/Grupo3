@@ -13,7 +13,7 @@ refletidos" para a vítima e executados pelo browser. A forma mais comum que ata
 Por exemplo, a aplicação web que gera o website https://insecure-website.com/ está vulnerável a ataques deste tipo. Esta aplicação simplesmente
 recebe dados na forma de um HTTP request e imediatamente envia estes dados para o utilizador. Assim, ao aceder ao URL 
 https://insecure-website.com/query?query=Some+Query será enviado ao utilizador ```<p>Query: Some Query</p>```. Como a aplicação não valida os dados
-recebidos um atacante poderá construir o seguinte URL: [https://insecure-website.com/query?query=<script>/* Código Malicioso */</script>], quando
+recebidos um atacante poderá construir o seguinte URL: [https://insecure-website.com/query?query=<script>/*Código Malicioso*/</script>], quando
 uma vítima visitar este url irá ser enviada a seguinte resposta do servidor: ```<p>Query: <script>/* Código Malicioso */</script></p>```. O browser da
 vítima ao tentar interpretar a resposta do servidor irá executar o script com código malicioso criado pelo atacante.
  - "Stored XSS" - Acontece quando uma aplicação web recebe dados de fontes inseguras e seguidamente a inclui em respostas HTTP de maneira

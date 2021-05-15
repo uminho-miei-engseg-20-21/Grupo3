@@ -15,9 +15,17 @@
 		<constructor-arg name="ksPassword" ref="passwordProtection" />
 	</bean>
 
-	<bean id="tspSource" class="eu.europa.esig.dss.x509.tsp.MockTSPSource">
-		<property name="token" ref="tsa-token" />
-		<property name="alias" value="self-signed-tsa" />
+	<!--    <bean id="tspSource" class="eu.europa.esig.dss.x509.tsp.MockTSPSource">-->
+	<!--        <property name="token" ref="tsa-token" />-->
+	<!--        <property name="alias" value="self-signed-tsa" />-->
+	<!--    </bean>-->
+	<bean id="tspSource" class="eu.europa.esig.dss.service.tsp.OnlineTSPSource">
+		<constructor-arg name="tspServer" value="http://ts.cartaodecidadao.pt/tsa/server" />
+		<constructor-arg name="dataLoader" ref="tspDataLoader" />
+	</bean>
+
+	<bean id="tspDataLoader" class="eu.europa.esig.dss.service.http.commons.CommonsDataLoader">
+		<constructor-arg name="contentType" value="application/timestamp-query" />
 	</bean>
 
 </beans>

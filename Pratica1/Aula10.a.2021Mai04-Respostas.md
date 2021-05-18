@@ -4,7 +4,7 @@
 
 Os programas apresentados, independentemente da linguagem, têm como objetivo criar e preencher um array e para isso alocam parte da memória estática para armazenar 10 inteiros. Ao utilizador é pedido que indique o número de inteiros que pretende guardar. Assim, se for introduzido um número inteiro igual ou menor que 10 o programa comporta-se como esperado, guardando os valores no array. Se em seguida o valor inserido for referente a uma das 10 posições do array {0,1,2,3,4,5,6,7,8,9} então é retornado o valor guardado nessa posição e o programa termina com sucesso a sua execução. 
 
-Apresenta-se abaixo os resultados obtidos quando o programa tem sucesso na  execução, ou seja são cumpridos os pressupostos antes apresentados (Valor a guardar: int <= 10 e valor a recuperar 0<= int <10):
+Apresentam-se abaixo os resultados obtidos quando o programa tem sucesso na  execução, ou seja, quando são cumpridos os pressupostos antes apresentados (Valor a guardar: int <= 10 e valor a recuperar 0<= int <10):
 
 ```
 > python3 LOverflow3.py
@@ -35,7 +35,7 @@ O valor é 9
 
 Mas, tendo em conta que foi apenas alocado espaço para 10 inteiros, no caso do utilizador indicar um número superior o programa vai ter uma reação diferente de acordo com a linguagem de programação utilizada.
 
-De modo a analisar os diferentes comportamentos de acordo com a linguagem apresenta-se o output obtido em cada uma delas quando se tenta guardar 11 inteiros.
+De modo a analisar os diferentes comportamentos de acordo com a linguagem utilizada, apresenta-se, de seguida, o *output* obtido em cada uma delas quando se tenta guardar 11 inteiros.
 
 ```
 > python3 LOverflow3.py
@@ -62,9 +62,9 @@ Aborted
 ```
 
 
-Para a implementação em Java, a execução do programa para com o lançamento da exception *Index 10 out of bounds for length 10*. O script em *Python* também interrompe a execução com o lançamento de uma exepção: *IndexError: list assignment index out of range*. 
+Para a implementação em Java, a execução do programa pára com o lançamento da exceção *Index 10 out of bounds for length 10*. O script em *Python* também interrompe a execução com o lançamento de uma exceção: *IndexError: list assignment index out of range*. 
 
-Por outro lado, no programa em linguagem C++, conseguimos aceder aos valores que se encontram em posições do array que não deviam ser possiveis obter abortando depois a execução com um *stack smashing*. No caso de se utilizar um valor de elevadas dimensões o programa dá *segmentation fault*.
+Por outro lado, no programa em linguagem C++, conseguimos aceder aos valores que se encontram em posições do array onde tal não deveria ser possível, abortando depois a execução com um *stack smashing*. No caso de se utilizar um valor de elevadas dimensões o programa dá *segmentation fault*.
 
 Com a resolução deste exercicío e das experiências anteriores concluímos que os programas em Java e Python não são vulneráveis a problemas de *Buffer overflow*. Isto deve-se ao facto de serem linguagens *Memory Safe*, ou seja não permitirem o acesso a regiões de memória não alocadas para o efeito. Em oposição, a linguagem C++ não realiza qualquer controlo de acesso à memória.
 
@@ -76,9 +76,9 @@ Com a resolução deste exercicío e das experiências anteriores concluímos qu
 Neste programa, é pedido ao utilizador que introduza uma palavra passe. A vulnerabilidade existente está relacionada com a não validação do tamanho do *input*, associado à password inserida, lido pela função *gets*.
 
 Uma vez que temos acesso ao código, facilmente se obteve o endereço do *buff* e da variável *pass*, e se percebeu que a *pass* se encontra 4 posições depois do 
-*buff*. Assim, qualquer *password* inserida com pelo menos 5 valores, apesar de errada, vai permitir preencher o *buff* e activar a variável *pass* que atribui as permissões de admin.
+*buff*. Assim, qualquer *password* inserida com pelo menos 5 valores, apesar de errada, vai permitir preencher o *buff* e activar a variável *pass* que atribui as permissões de *admin*.
 
-Abaixo apresenta-se o processo executado e o output obtido.
+Abaixo apresenta-se o processo executado e o *output* obtido.
 
 ```
 gcc -o RootExploit RootExploit.c -fno-stack-protector
@@ -94,14 +94,14 @@ ollla
 
  Password errada
 
- Foram-lhe atribuidas permissões de root/admin
+ Foram-lhe atribuídas permissões de root/admin
 ```
 
 
 * 0-simple.c
 
-Neste programa a vulnerabilidade existente ocorre pelas mesmas razões que a anterior, devido a não validação do tamanho de input. 
-Aqui a variavel *buffer* é um array de 64 bytes. Consultando o endereço de cada variável conseguimos identificar que as mesmas distam 76 posições. Quando este valor é ultrapassado a variável de controlo é alterada deixando de estar a zero e obtendo-se a mensagem "YOU WIN"
+Neste programa a vulnerabilidade existente ocorre pelas mesmas razões que a anterior, devido à não validação do tamanho de *input*. 
+Aqui a variavel *buffer* é um array de 64 *bytes*. Consultando o endereço de cada variável conseguimos identificar que as mesmas distam 76 posições. Quando este valor é ultrapassado, a variável de controlo é alterada deixando de estar a zero e obtendo-se a mensagem "YOU WIN".
 
 
 ```
@@ -119,11 +119,11 @@ YOU WIN!!!
 
 ## Pergunta P1.3
 
-O programa começa por alocar um buffer de 100 bytes. Em seguida o utilizador deve escolher o tamanho do input  (nº de carateres) e uma frase.
-Depois de realizar alguns testes e analisar o código com maior promenor percebe-se que o mesmo se encontra vulnerável por
-não realizar uma validação do input, permitindo que o valor inserido para o tamanho seja maior que o disponivel no buffer e ainda que a frase inserida seja de dimensão inferior ao tamanho so buffer. 
+O programa começa por alocar um *buffer* de 100 *bytes*. Em seguida o utilizador deve escolher o tamanho do *input*  (nº de carateres) e uma frase.
+Depois de realizar alguns testes e analisar o código com mais detalhe, percebe-se que o mesmo se encontra vulnerável por
+não realizar uma validação do *input*, permitindo que o valor inserido para o tamanho seja maior que o disponivel no *buffer* e ainda que a frase inserida seja de dimensão inferior ao tamanho do *buffer*. 
 
-Assim, quando todos os carateres pertencentes à frase passam pelo While para serem impressos, o ciclo continua a iterar até atingir o número de carateres dado pelo user e apresentando o conteúdo das posições da stack que se seguem.
+Assim, quando todos os carateres pertencentes à frase passam pelo ciclo ``while`` para serem impressos, o ciclo continua a iterar até atingir o número de carateres dado pelo utilizador e apresentando o conteúdo das posições da *stack* que se seguem.
 
 
 ```
@@ -136,17 +136,17 @@ ECO: |OLA.............................@P$U..............WM.9...VM.9...-c$U..ȟP-
 
 ## Pergunta P1.4
 
-Depois de compilar e executar o programa com um argumento aleatório obtemos a seguinte mensagem: *You win this game if you can change variable control to the value 0x61626364*.
+Depois de compilar e executar o programa com um argumento aleatório, obtemos a seguinte mensagem: *You win this game if you can change variable control to the value 0x61626364*.
 
-Em seguida, recorreu-se a um conversor online para  o transformar o valor hexadecimal *0x61626364* em ASCII. Obteve-se os caracteres *abcd*.
+Em seguida, recorreu-se a um conversor *online* para transformar o valor hexadecimal *0x61626364* em ASCII. Obteve-se os caracteres *abcd*.
 
-Faltava agora descobrir a quantidade de carateres que são necessários introduzir para ultrapassar os 64 bits de armazenamento do buffer. Após alguns teste verificamos que é necessario inserir 77 carateres para ocupar a memória alocada para buffer. 
+Faltava agora descobrir a quantidade de carateres que seriam necessários introduzir para ultrapassar os 64 *bits* de armazenamento do *buffer*. Após alguns testes, verificámos que é necessario inserir 77 carateres para ocupar a memória alocada para o *buffer*. 
 
 O passo seguinte consitiu em executar o programa passando como argumento 77 carateres aleatórios concatenados com a string *abcd*. A execução do programa falhou emitindo a mensagem "Try again".
 
-Seguinda a sugestão apresentada no guião pesquisamos e relembramos os conceitos de little-endian e big-endian.  Como o código foi testado num sistema operativo UNIX que guarda o bit menos significativo na posição de memória cujos endereços são menores (é litle-endian) é necessário inverter a string obtendo *dcba*.
+Seguinda a sugestão apresentada no guião, pesquisámos e relembrámos os conceitos de *little-endian* e *big-endian*.  Como o código foi testado num sistema operativo UNIX que guarda o bit menos significativo na posição de memória cujos endereços são menores (é *litle-endian*), é necessário inverter a string obtendo *dcba*.
 
-Assim, dando como argumento ao programa a string: *"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadcba"* obtemos uma mensagem de sucesso.
+Assim, passando como argumento ao programa a *string*: *"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadcba"* obtemos uma mensagem de sucesso.
 
 ``` 
 >./1-match 
@@ -160,11 +160,11 @@ Congratulations, you win!!! You correctly got the variable to the right value
 
 Foram realizadas as seguintes alterações:
 
-* Validação dos argumentos de input: se receber mais que um argumento o programa termina.
+* Validação dos argumentos de *input*: se receber mais que um argumento o programa termina.
 
 * Evitar funções de risco:  substitui-se a utilização da função *strcpy*, insegura, pela função *strncpy*.
 
-* Alocar a memória necessaria para a variável dummy.
+* Alocar a memória necessária para a variável *dummy*.
 
 O resultado final pode ser visto em baixo.
 
@@ -193,9 +193,9 @@ int main(int argc, char **argv) {
 
 ## Pergunta P1.6
 
-Despois de analisar o código percebeu-se que deviamos introduzir as seguintes alterações no ficheiro *stack.c*.
+Despois de analisar o código, percebeu-se que devíamos introduzir as seguintes alterações no ficheiro *stack.c*.
 
-* Alocar espaço em memória para a váriavel *buffer*  de acordo com o tamanho da string.
+* Alocar espaço em memória para a variável *buffer*  de acordo com o tamanho da *string*.
 
 * Evitar funções de risco:  substituiu-se a utilização da função *strcpy*, insegura, pela função *strncpy*.
 

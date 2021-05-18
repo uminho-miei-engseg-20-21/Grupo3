@@ -1,10 +1,10 @@
-# Aula TP 10 - Parte A - 4/Maio/2021 - Resolução
+# Aula TP 10 - Parte B - 4/Maio/2021 - Resolução
 
 ## Pergunta P1.1
 1. Analisando o programa *overflow.c*, a vulnerabilidade que existe na função ```vulneravel()``` é o facto de as variáveis ``x`` e ``y`` terem sido definidas com o tipo ``size_t`` e o seu tamanho nao estar a ser validado. Este tipo de dados é um tipo *unsigned*, sendo que o seu tamanho varia de acordo com o tipo de dados concreto (um inteiro, um *char* ou um *long*, entre outros).
-O valor máximo permitido para alocação de memória na função ``malloc`` é 16711568 bytes. Como não há validação do tamanho destas variáveis, pode ocorrer *overflow*, a definição de uma matriz que ultrapasse esse valor irá gerar *segmentation fault*. 
+O valor máximo permitido para alocação de memória na função ``malloc`` é 16711568 bytes. Como não há validação do tamanho destas variáveis, pode ocorrer *overflow*. Caso seja definida uma matriz cujo tamanho ultrapasse esse valor irá ocorrer um erro de *segmentation fault*. 
 
-2. De modo a demonstrar a vulnerabilidade descrita na pergunta anterior, definimos a função main da seguinte forma:
+2. De modo a demonstrar a vulnerabilidade descrita na pergunta anterior, definimos a função ``main`` da seguinte forma:
 
 ```C
 void vulneravel (char *matriz, size_t x, size_t y, char valor) {

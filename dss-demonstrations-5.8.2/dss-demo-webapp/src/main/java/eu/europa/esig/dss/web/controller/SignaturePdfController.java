@@ -10,6 +10,8 @@ import eu.europa.esig.dss.model.MimeType;
 import eu.europa.esig.dss.model.ToBeSigned;
 import eu.europa.esig.dss.spi.DSSUtils;
 import eu.europa.esig.dss.utils.Utils;
+import eu.europa.esig.dss.validation.timestamp.TimestampToken;
+import eu.europa.esig.dss.web.WebAppUtils;
 import eu.europa.esig.dss.web.model.DataToSignParams;
 import eu.europa.esig.dss.web.model.GetDataToSignResponse;
 import eu.europa.esig.dss.web.model.SignDocumentResponse;
@@ -74,7 +76,7 @@ public class SignaturePdfController {
 
 		// Pre-configure for PAdES
 		signaturePdfForm.setSignatureForm(SignatureForm.PAdES);
-		signaturePdfForm.setSignatureLevel(SignatureLevel.PAdES_BASELINE_B);
+		signaturePdfForm.setSignatureLevel(SignatureLevel.PAdES_BASELINE_LTA);
 		signaturePdfForm.setDigestAlgorithm(DigestAlgorithm.SHA256);
 		signaturePdfForm.setSignaturePackaging(SignaturePackaging.ENVELOPED);
 

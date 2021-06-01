@@ -1,8 +1,8 @@
-# Aula TP 10 - Parte A - 4/Maio/2021 - Resolução
+# Aula TP 12 - 18/Maio/2021 - Resolução
 
 ## Pergunta P1.1
 
-Em seguida apresenta-se as queries criadas para resolver cada um dos 9 problemas (2,3,4,5,9,10,11,12,13) e as respostas dadas pelo servidor.
+Em seguida apresentam-se as *queries* definidas para resolver cada um dos 9 problemas (2, 3, 4, 5, 9, 10, 11, 12, 13) e as respostas dadas pelo servidor.
 
 
 
@@ -103,7 +103,7 @@ USERID, FIRST_NAME, LAST_NAME, CC_NUMBER, CC_TYPE, COOKIE, LOGIN_COUNT,
 
 ### Problema 10 - Try It! Numeric SQL injection
 
-Preenchendo os campos Login_Count e User_Id com valores númericos aleatórios basta garantir que em User_Id se coloque uma condição que retorna sempre True ("1" = "1").
+Preenchendo os campos ``Login_Count`` e ``User_Id`` com valores númericos aleatórios basta garantir que em ``User_Id`` se coloca uma condição que retorna sempre ``True`` ("1" = "1").
 
 Por exemplo, com os valores:
 
@@ -136,7 +136,7 @@ USERID, FIRST_NAME, LAST_NAME, CC_NUMBER, CC_TYPE, COOKIE, LOGIN_COUNT,
 
 ### Problema 11 - Compromising confidentiality with String SQL injection
 
-Preenchendo os campos com os dados indicados, basta garantir que em Authentication TAN se coloque uma condição que retorna sempre True. Na seleção da opção é preciso ter em atenção ás aspas que já se encontram na query.
+Preenchendo os campos com os dados indicados, basta garantir que em ``Authentication TAN`` se coloca uma condição que retorna sempre ``True``. Na seleção da opção é preciso ter em atenção as aspas que já se encontram na *query*.
 
 >Employee Name: Smith 
 
@@ -201,7 +201,7 @@ Success! You successfully deleted the access_log table and that way compromised 
 
 ## Pergunta P2.1
 
-Em seguida apresenta-se as respostas a cada um dos cinco problemas (2,7,10,11,12).
+Em seguida apresentam-se as respostas a cada um dos cinco problemas (2, 7, 10, 11, 12).
 
 
 ### Problema 2 - What is XSS?
@@ -218,7 +218,7 @@ Congratulations. You have successfully completed the assignment.
 
 ### Problema 7 - Try It! Reflected XSS
 
-Com a leitura das secções informativas 3, 4, 5, 6 e ainda com a realização de alguns testes, percebeu-se que este problema pode ser concluido com sucesso se colocar-mos no campo "Credit card number" o seguinte:<script\>alert()</script\>.
+Com a leitura das secções informativas 3, 4, 5, 6 e ainda com a realização de alguns testes, percebeu-se que este problema pode ser concluido com sucesso se colocarmos no campo ``Credit card number`` o seguinte: <script\>alert()<\/script>.
 
 Obtemos:
 
@@ -230,7 +230,7 @@ Well done, but alerts are not very impressive are they? Please continue.
 
 ### Problema 10 - Identify potential for DOM-Based XSS
 
-Para resolver este problema utilizamos a funcioalidade "Inspecionar página" do Chrome. Fazendo uma breve análise ao código fonte descubrimos que a rota _webgoat/js/goastApp/view_ possui o ficheiro _GoatRouter.js_ que identifica todas as rotas disponiveis.
+Para resolver este problema utilizámos a funcionalidade "Inspecionar página" do Chrome. Fazendo uma breve análise ao código fonte descobrimos que a rota _webgoat/js/goastApp/view_ possui o ficheiro _GoatRouter.js_ que identifica todas as rotas disponíveis.
 
 ```
 routes: {
@@ -249,12 +249,12 @@ Correct! Now, see if you can send in an exploit to that route in the next assign
 ```
 ### Problema 11 - Try It! DOM-Based XSS
 
-Na alinea anterior foi possivel descobrit a rota de teste: http://localhost:8080/WebGoat/start.mvc#test/. Por isso, basta agora adicionar o script _<script\>webgoat.customjs.phoneHome()</script\>_ como parâmetro.
+Na alínea anterior foi possivel descobrir a rota de teste: http://localhost:8080/WebGoat/start.mvc#test/. Por isso, basta agora adicionar o script _<script\>webgoat.customjs.phoneHome()</script\>_ como parâmetro.
 
-Tentamos aceder a essa rota mas não foi possivel obter o número. 
-Depois de diversas tentativas foi necessario recorrer ás ajudas disponiveis e verificamos que faltava substituir a '/' por '%2F' nos parâmetros.
+Tentámos aceder a essa rota mas não foi possível obter o número. 
+Depois de diversas tentativas foi necessário recorrer às ajudas disponíveis e verificámos que faltava substituir a '/' por '%2F' nos parâmetros.
 
-Assim, acedendo a rota:
+Assim, acedendo à rota:
 
 
 ```

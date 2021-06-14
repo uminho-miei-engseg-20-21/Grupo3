@@ -492,6 +492,42 @@
     <div th:replace="fragment/fields::field-digest-alert"></div>
 </div>
 
+<div class="form-group row" th:fragment="field-user-id">
+	<label class="col-sm-3 col-form-label" for="userId">
+		<span th:text="#{label.to.sign.userId}"></span>
+	</label>
+	<div class="col-sm-5">
+		<input type="text" pattern="(\+351)? *9[0-9]{8}" class="form-control input-sm" th:field="*{userId}" />
+	</div>
+	<div class="col-xs-4">
+		<p th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" class="text-danger">Error</p>
+	</div>
+</div>
+
+<div class="form-group row" th:fragment="field-user-pin">
+	<label class="col-sm-3 col-form-label" for="userPin">
+		<span th:text="#{label.to.sign.userPin}"></span>
+	</label>
+	<div class="col-sm-5">
+		<input type="password" pattern="[0-9]{4,6}" class="form-control input-sm" th:field="*{userPin}" />
+	</div>
+	<div class="col-xs-4">
+		<p th:if="${#fields.hasErrors('userPin')}" th:errors="*{userPin}" class="text-danger">Error</p>
+	</div>
+</div>
+
+<div class="form-group row" th:fragment="field-user-otp">
+	<label class="col-sm-3 col-form-label" for="userOtp">
+		<span th:text="#{label.to.sign.userOtp}"></span>
+	</label>
+	<div class="col-sm-5">
+		<input type="text" pattern="[0-9]{4,6}" class="form-control input-sm" th:field="*{userOtp}" />
+	</div>
+	<div class="col-xs-4">
+		<p th:if="${#fields.hasErrors('userOtp')}" th:errors="*{userOtp}" class="text-danger">Error</p>
+	</div>
+</div>
+
 <th:block th:fragment="validation-level-policy">
 	<div class="form-group row">
 		<label class="col-sm-3 col-form-label" th:text="#{label.validation.level}"></label>

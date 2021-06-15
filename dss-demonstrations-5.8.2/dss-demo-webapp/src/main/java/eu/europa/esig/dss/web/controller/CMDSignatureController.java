@@ -31,6 +31,8 @@ import javax.validation.Valid;
 import javax.xml.ws.soap.SOAPFaultException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.util.Date;
 import java.util.List;
@@ -102,13 +104,14 @@ public class CMDSignatureController {
 		try {
 			certificates = cmdService.getCertificatesOf(signatureDocumentForm.getUserId());
 		} catch(SOAPFaultException | CertificateException | IOException e) {
+			e.printStackTrace();
 			result.addError(new ObjectError("userId", "UserId is not valid!"));
 			return SIGNATURE_START;
 		}
 
 		// Set the user's certificates on the form object
 		signatureDocumentForm.setBase64Certificate(certificates.get(0));
-		signatureDocumentForm.setBase64CertificateChain(certificates.subList(1, certificates.size() - 1));
+		signatureDocumentForm.setBase64CertificateChain(certificates.subList(1, certificates.size()));
 
 		// Set the signing date and, if requested, the content timestamp
 		signatureDocumentForm.setSigningDate(new Date());
@@ -118,7 +121,7 @@ public class CMDSignatureController {
 		}
 
 		// Create a signing request
-		String docName = signatureDocumentForm.getDocumentToSign().getName();
+		String docName = signatureDocumentForm.getDocumentToSign().getOriginalFilename();
 		ToBeSigned dataToSign = signingService.getDataToSign(signatureDocumentForm);
 		if (dataToSign == null) {
 			return null;
@@ -145,7 +148,7 @@ public class CMDSignatureController {
 		String signature = cmdService.validateOtp(signatureDocumentForm.getProcessId(), cmdOtpForm.getUserOtp());
 
 		if(signature == null) {
-			return SIGNATURE_START;
+			return SIGNATURE_GET_OTP;
 		}
 
 		signatureDocumentForm.setBase64SignatureValue(signature);
@@ -159,7 +162,7 @@ public class CMDSignatureController {
 		return SIGNATURE_SIGNED;
 	}
 
-	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	@RequestMapping(value = "/sign-document/download", method = RequestMethod.GET)
 	public String downloadSignedFile(@ModelAttribute("signedDocument") InMemoryDocument signedDocument, HttpServletResponse response) {
 		try {
 			MimeType mimeType = signedDocument.getMimeType();

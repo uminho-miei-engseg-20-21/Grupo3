@@ -5,7 +5,7 @@
 		
 			<div th:replace="fragment/disclaimer-mock-tsp::mock-tsp-warn"></div>
 
-            <form method="post" enctype="multipart/form-data" th:action="@{/cmd-sign-document}" th:object="${cmdOtpForm}">
+            <form method="post" enctype="multipart/form-data" th:action="@{/cmd-sign-a-document/sign-document}" th:object="${cmdOtpForm}">
 
                 <input type="hidden" id="process" value="SIGNATURE" />
 

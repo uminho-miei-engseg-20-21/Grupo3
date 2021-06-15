@@ -28,6 +28,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SignRequest_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignRequest");
+    private final static QName _SignStatus_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignStatus");
+    private final static QName _SignResponse_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignResponse");
+    private final static QName _ArrayOfHashStructure_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "ArrayOfHashStructure");
+    private final static QName _HashStructure_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "HashStructure");
+    private final static QName _MultipleSignRequest_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "MultipleSignRequest");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
     private final static QName _AnyURI_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyURI");
     private final static QName _Base64Binary_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "base64Binary");
@@ -49,12 +55,6 @@ public class ObjectFactory {
     private final static QName _Char_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "char");
     private final static QName _Duration_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "duration");
     private final static QName _Guid_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "guid");
-    private final static QName _SignRequest_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignRequest");
-    private final static QName _SignStatus_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignStatus");
-    private final static QName _SignResponse_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "SignResponse");
-    private final static QName _ArrayOfHashStructure_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "ArrayOfHashStructure");
-    private final static QName _HashStructure_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "HashStructure");
-    private final static QName _MultipleSignRequest_QNAME = new QName("http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", "MultipleSignRequest");
     private final static QName _CCMovelSignRequest_QNAME = new QName("http://Ama.Authentication.Service/", "request");
     private final static QName _CCMovelSignResponseCCMovelSignResult_QNAME = new QName("http://Ama.Authentication.Service/", "CCMovelSignResult");
     private final static QName _GetCertificateApplicationId_QNAME = new QName("http://Ama.Authentication.Service/", "applicationId");
@@ -220,6 +220,84 @@ public class ObjectFactory {
      */
     public HashStructure createHashStructure() {
         return new HashStructure();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SignRequest }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SignRequest }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignRequest")
+    public JAXBElement<SignRequest> createSignRequest(SignRequest value) {
+        return new JAXBElement<SignRequest>(_SignRequest_QNAME, SignRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SignStatus }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SignStatus }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignStatus")
+    public JAXBElement<SignStatus> createSignStatus(SignStatus value) {
+        return new JAXBElement<SignStatus>(_SignStatus_QNAME, SignStatus.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SignResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SignResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignResponse")
+    public JAXBElement<SignResponse> createSignResponse(SignResponse value) {
+        return new JAXBElement<SignResponse>(_SignResponse_QNAME, SignResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfHashStructure }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfHashStructure }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "ArrayOfHashStructure")
+    public JAXBElement<ArrayOfHashStructure> createArrayOfHashStructure(ArrayOfHashStructure value) {
+        return new JAXBElement<ArrayOfHashStructure>(_ArrayOfHashStructure_QNAME, ArrayOfHashStructure.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link HashStructure }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link HashStructure }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "HashStructure")
+    public JAXBElement<HashStructure> createHashStructure(HashStructure value) {
+        return new JAXBElement<HashStructure>(_HashStructure_QNAME, HashStructure.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultipleSignRequest }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link MultipleSignRequest }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "MultipleSignRequest")
+    public JAXBElement<MultipleSignRequest> createMultipleSignRequest(MultipleSignRequest value) {
+        return new JAXBElement<MultipleSignRequest>(_MultipleSignRequest_QNAME, MultipleSignRequest.class, null, value);
     }
 
     /**
@@ -493,84 +571,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.microsoft.com/2003/10/Serialization/", name = "guid")
     public JAXBElement<String> createGuid(String value) {
         return new JAXBElement<String>(_Guid_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SignRequest }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SignRequest }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignRequest")
-    public JAXBElement<SignRequest> createSignRequest(SignRequest value) {
-        return new JAXBElement<SignRequest>(_SignRequest_QNAME, SignRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SignStatus }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SignStatus }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignStatus")
-    public JAXBElement<SignStatus> createSignStatus(SignStatus value) {
-        return new JAXBElement<SignStatus>(_SignStatus_QNAME, SignStatus.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SignResponse }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SignResponse }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "SignResponse")
-    public JAXBElement<SignResponse> createSignResponse(SignResponse value) {
-        return new JAXBElement<SignResponse>(_SignResponse_QNAME, SignResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfHashStructure }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ArrayOfHashStructure }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "ArrayOfHashStructure")
-    public JAXBElement<ArrayOfHashStructure> createArrayOfHashStructure(ArrayOfHashStructure value) {
-        return new JAXBElement<ArrayOfHashStructure>(_ArrayOfHashStructure_QNAME, ArrayOfHashStructure.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HashStructure }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link HashStructure }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "HashStructure")
-    public JAXBElement<HashStructure> createHashStructure(HashStructure value) {
-        return new JAXBElement<HashStructure>(_HashStructure_QNAME, HashStructure.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MultipleSignRequest }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link MultipleSignRequest }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Ama.Structures.CCMovelSignature", name = "MultipleSignRequest")
-    public JAXBElement<MultipleSignRequest> createMultipleSignRequest(MultipleSignRequest value) {
-        return new JAXBElement<MultipleSignRequest>(_MultipleSignRequest_QNAME, MultipleSignRequest.class, null, value);
     }
 
     /**

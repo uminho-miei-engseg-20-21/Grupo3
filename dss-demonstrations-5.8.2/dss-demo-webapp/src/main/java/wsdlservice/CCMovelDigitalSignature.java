@@ -17,20 +17,20 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CCMovelDigitalSignature", targetNamespace = "http://Ama.Authentication.Service/", wsdlLocation = "https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?singleWsdl")
+@WebServiceClient(name = "CCMovelDigitalSignature", targetNamespace = "http://tempuri.org/", wsdlLocation = "https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl")
 public class CCMovelDigitalSignature
     extends Service
 {
 
     private final static URL CCMOVELDIGITALSIGNATURE_WSDL_LOCATION;
     private final static WebServiceException CCMOVELDIGITALSIGNATURE_EXCEPTION;
-    private final static QName CCMOVELDIGITALSIGNATURE_QNAME = new QName("http://Ama.Authentication.Service/", "CCMovelDigitalSignature");
+    private final static QName CCMOVELDIGITALSIGNATURE_QNAME = new QName("http://tempuri.org/", "CCMovelDigitalSignature");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?singleWsdl");
+            url = new URL("https://cmd.autenticacao.gov.pt/Ama.Authentication.Frontend/CCMovelDigitalSignature.svc?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
@@ -69,7 +69,7 @@ public class CCMovelDigitalSignature
      */
     @WebEndpoint(name = "BasicHttpBinding_CCMovelSignature")
     public CCMovelSignature getBasicHttpBindingCCMovelSignature() {
-        return super.getPort(new QName("http://Ama.Authentication.Service/", "BasicHttpBinding_CCMovelSignature"), CCMovelSignature.class);
+        return super.getPort(new QName("http://tempuri.org/", "BasicHttpBinding_CCMovelSignature"), CCMovelSignature.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class CCMovelDigitalSignature
      */
     @WebEndpoint(name = "BasicHttpBinding_CCMovelSignature")
     public CCMovelSignature getBasicHttpBindingCCMovelSignature(WebServiceFeature... features) {
-        return super.getPort(new QName("http://Ama.Authentication.Service/", "BasicHttpBinding_CCMovelSignature"), CCMovelSignature.class, features);
+        return super.getPort(new QName("http://tempuri.org/", "BasicHttpBinding_CCMovelSignature"), CCMovelSignature.class, features);
     }
 
     private static URL __getWsdlLocation() {

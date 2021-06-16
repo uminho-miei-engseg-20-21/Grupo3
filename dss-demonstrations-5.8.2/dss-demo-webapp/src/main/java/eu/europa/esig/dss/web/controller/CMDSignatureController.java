@@ -127,7 +127,14 @@ public class CMDSignatureController {
 			return null;
 		}
 
-		String processId = cmdService.sign(docName, dataToSign.getBytes(), signatureDocumentForm.getUserId(), signatureDocumentForm.getUserPin());
+		SignatureAlgorithm certificateSignatureAlgorithm = DSSUtils.loadCertificateFromBase64EncodedString(signatureDocumentForm.getBase64Certificate()).getSignatureAlgorithm();
+
+		String processId = cmdService.sign(docName,
+				dataToSign.getBytes(),
+				certificateSignatureAlgorithm.getEncryptionAlgorithm(),
+				signatureDocumentForm.getDigestAlgorithm(),
+				signatureDocumentForm.getUserId(),
+				signatureDocumentForm.getUserPin());
 
 		signatureDocumentForm.setProcessId(processId);
 
@@ -157,7 +164,7 @@ public class CMDSignatureController {
 		InMemoryDocument signedDocument = new InMemoryDocument(DSSUtils.toByteArray(document), document.getName(), document.getMimeType());
 
 		model.addAttribute("signedDocument", signedDocument);
-		model.addAttribute("rootUrl", "cmd-sign-a-document");
+		model.addAttribute("rootUrl", "sign-document");
 
 		return SIGNATURE_SIGNED;
 	}

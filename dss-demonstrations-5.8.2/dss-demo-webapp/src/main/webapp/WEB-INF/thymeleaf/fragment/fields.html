@@ -497,7 +497,7 @@
 		<span th:text="#{label.to.sign.userId}"></span>
 	</label>
 	<div class="col-sm-5">
-		<input type="text" pattern="(\+351)? *9[0-9]{8}" class="form-control input-sm" th:field="*{userId}" />
+		<input type="text" pattern="(\+351)? *9[0-9]{8}" class="form-control input-sm" autocomplete="off" th:field="*{userId}" />
 	</div>
 	<div class="col-xs-4">
 		<p th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" class="text-danger">Error</p>

@@ -10,7 +10,7 @@ public class CMDSignatureDocumentForm extends SignatureDocumentForm {
 	private String userId;
 
 	@NotNull
-	@Pattern(regexp = "[0-9]{4,6}", message = "{error.cmd.userPin.wrongInput}")
+	@Pattern(regexp = "[0-9]{4,8}", message = "{error.cmd.userPin.wrongInput}")
 	private String userPin;
 
 	private String processId;

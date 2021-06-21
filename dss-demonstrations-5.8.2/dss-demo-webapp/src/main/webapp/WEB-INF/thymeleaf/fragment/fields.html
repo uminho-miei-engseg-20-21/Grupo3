@@ -509,7 +509,7 @@
 		<span th:text="#{label.to.sign.userPin}"></span>
 	</label>
 	<div class="col-sm-5">
-		<input type="password" pattern="[0-9]{4,6}" class="form-control input-sm" th:field="*{userPin}" />
+		<input type="password" pattern="[0-9]{4,8}" class="form-control input-sm" th:field="*{userPin}" />
 	</div>
 	<div class="col-xs-4">
 		<p th:if="${#fields.hasErrors('userPin')}" th:errors="*{userPin}" class="text-danger">Error</p>

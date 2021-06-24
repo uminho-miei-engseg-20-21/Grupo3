@@ -504,6 +504,15 @@
 	</div>
 </div>
 
+<div class="form-group row" th:fragment="field-save-user-id">
+	<label class="col-sm-3 col-form-label" for="saveUserId" th:text="#{label.to.sign.saveUserId}"></label>
+	<div class="col-sm-5">
+		<div class="form-check">
+			<input class="form-check-input position-static" type="checkbox" id="saveUserId" name="saveUserId" th:aria-label="#{label.add.content.timestamp}" />
+		</div>
+	</div>
+</div>
+
 <div class="form-group row" th:fragment="field-user-pin">
 	<label class="col-sm-3 col-form-label" for="userPin">
 		<span th:text="#{label.to.sign.userPin}"></span>

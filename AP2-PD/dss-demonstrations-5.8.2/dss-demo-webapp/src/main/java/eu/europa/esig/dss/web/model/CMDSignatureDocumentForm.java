@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 public class CMDSignatureDocumentForm extends SignatureDocumentForm {
 
 	@NotNull
-	@Pattern(regexp = "(\\+351)? *9[0-9]{8}", message = "{error.cmd.userId.wrongInput}")
+	@Pattern(regexp = "(\\+351) *9[0-9]{8}", message = "{error.cmd.userId.wrongInput}")
 	private String userId;
 
 	@NotNull
